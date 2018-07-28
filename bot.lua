@@ -30,6 +30,7 @@ szobak = {
 }
 
 functions[8] = function(message) 
+	
 end
 
 --messagesWaiting = {}
