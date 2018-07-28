@@ -10,7 +10,7 @@ end)
 
 prefix = "."
 
-commands = {"help", "web","szabalyok", "steam", "ytchannel", "css", "ingyenjatek", "joinduo" --[["facebook"]]}
+commands = {"help", "web","szabalyok", "steam", "ytchannel", "css", "ingyenjatek", --[["joinduo",]] --[["facebook"]]}
 texts = {
 	{content = "Az alábbi parancsokkal tudod használni a botot:\n\n.web - Kiírja a weboldalunk linkjét\n.szabalyok - Meg tudod nézni a szabályokat\n.steam - Kiírja a steam csoportunk linkjét\n.ytchannel - Kiírja a csoportunk Youtube csatornáját\n.ingyenjatek - Kiírja a Humble Bundle oldal linkjét\n.css - Bizonyos CSS szerverek IP címét írja ki, melyeken néha aktívak vagyunk", code = true}, 
 	"**A Reversed weboldala:**\nhttps://reversed.webnode.hu/",
