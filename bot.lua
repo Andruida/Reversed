@@ -141,4 +141,4 @@ function tableTree(result)
 	end
 end
 
-client:run('Bot NDU5MzgwOTg0NTM4ODU3NDc0.Dg1c0g.vRuCkgCKcdbjfG9_unugqB6-mU4')
+
