@@ -10,7 +10,7 @@ end)
 
 prefix = "."
 
-commands = {"help", "web","szabalyok", "steam", "ytchannel", "css", "ingyenjatek", --[["joinduo",]] --[["facebook"]]}
+commands = {"help", "web","szabalyok", "steam", "ytchannel", "css", "ingyenjatek", "joinduo" --[["facebook"]]}
 texts = {
 	{content = "Az alábbi parancsokkal tudod használni a botot:\n\n.web - Kiírja a weboldalunk linkjét\n.szabalyok - Meg tudod nézni a szabályokat\n.steam - Kiírja a steam csoportunk linkjét\n.ytchannel - Kiírja a csoportunk Youtube csatornáját\n.ingyenjatek - Kiírja a Humble Bundle oldal linkjét\n.css - Bizonyos CSS szerverek IP címét írja ki, melyeken néha aktívak vagyunk", code = true}, 
 	"**A Reversed weboldala:**\nhttps://reversed.webnode.hu/",
@@ -30,7 +30,6 @@ szobak = {
 }
 
 functions[8] = function(message) 
-	
 end
 
 --messagesWaiting = {}
@@ -47,8 +46,8 @@ client:on('messageCreate', function(message)
 			message.channel:send("A channelID: \n"..tostring(message.channel.id))
 			--message:reply("**Bot karbantartás folyamatban... (Windows 10 update)**\nÚjra működni fog reggel 8 órától")
 		end
-	if message.channel.id == "335794631495254027" or message.channel.id == "460196686656962571" then
-		timer.setTimeout(60000, function(message)
+	if message.channel.id == "523962877053239296" or message.channel.id == "525701161768976394" then
+		timer.setTimeout(30000, function(message)
 			coroutine.resume(coroutine.create(function()
 				message:delete()
 				--print("deleted: "..message.content)
@@ -64,7 +63,7 @@ client:on('messageCreate', function(message)
 		elseif functions[id] then
 			functions[id](message)
 		end
-	elseif message.channel.id == "373490087662714881" then
+	elseif message.channel.id == "523962965179760674" then
 		timer.setTimeout( 2* 60 * 60 * 1000, function(message)
 			coroutine.resume(coroutine.create(function()
 				message:delete()
@@ -87,16 +86,20 @@ client:on('messageCreate', function(message)
 			end))
 		end, message)
 	end
+	local karomkodas = false
 	for k,v in pairs(moderate) do
 		if message.content:lower():find(v) then
-			timer.setTimeout(1000, function(message)
-				coroutine.resume(coroutine.create(function()
-					message:delete()
-					message:reply({content = "Ne káromkodj! :rage: ", mention = message.author})
-					--print("deleted: "..message.content)
-				end))
-			end, message)
+			karomkodas = true
 		end
+	end
+	if karomkodas == true then
+		timer.setTimeout(1000, function(message)
+			coroutine.resume(coroutine.create(function()
+				message:delete()
+				message:reply({content = "Ne káromkodj! :rage: ", mention = message.author})
+				--print("deleted: "..message.content)
+			end))
+		end, message)
 	end
 	for k,v in pairs(moderateLinks) do
 		if message.content:lower():find(v) then
@@ -141,4 +144,6 @@ function tableTree(result)
 	end
 end
 
-
+io.input("key.txt")
+client:run('Bot '..io.read())
+io.close()
