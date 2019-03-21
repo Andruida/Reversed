@@ -57,3 +57,7 @@ luac.out
 key.txt
 gateway.json
 deps/
+
+luvit
+lit
+luvi
