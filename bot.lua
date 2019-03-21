@@ -36,7 +36,7 @@ end
 
 moderate = { "basz", "bassz", "bazd", "picsa", "picsá", "pina", "piná", "fasz", "geci", "kurva", "pénisz", "kúrt", "szop", "buzi", "szar", "dug"}
 
-moderateLinks = {"https://www.pornhub.com", "https://www.xnxx.com/"}
+moderateLinks = {"https://www.pornhub.com", "https://www.xnxx.com"}
 
 client:on('messageCreate', function(message)
 	--tableTree(message)
