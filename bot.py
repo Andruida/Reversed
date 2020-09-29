@@ -120,7 +120,7 @@ async def on_message(message):
 				await message.delete()
 			except:
 				pass
-		if message.content.startswith(".") or message.content.startswith("!"):
+		if (message.content.startswith(".") or message.content.startswith("!")) and not message.content.startswith(".au"):
 			try:
 				await message.delete()
 			except:
