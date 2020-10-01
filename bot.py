@@ -114,7 +114,7 @@ async def on_message(message):
 	elif message.channel.id == 716978612137623622:
 		await bot.process_commands(message)
 	else:
-		if message.author.bot:
+		if message.author.bot and not message.author.name == "Among Us":
 			await asyncio.sleep(5)
 			try:
 				await message.delete()
