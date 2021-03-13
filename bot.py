@@ -111,7 +111,7 @@ async def on_message(message):
 			await message.delete()
 		except:
 			pass
-	elif message.channel.id == 716978612137623622:
+	elif message.channel.id == 716978612137623622 or message.channel.name == "poll":
 		await bot.process_commands(message)
 	else:
 		if message.author.bot and not message.author.name == "Among Us":
