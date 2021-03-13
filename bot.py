@@ -379,7 +379,7 @@ async def endpoll_executor(cancel=False):
 			results[emojiNameDict.get(emoji.emoji)] = emoji.count
 
 	# print(results)
-	poll["games"].sort(key=lambda x: results[x])
+	poll["games"].sort(key=lambda x: results[x], reverse=True)
 	description = "__**Eredmények:**__\n"
 	place = 0
 	for game in poll["games"]:
